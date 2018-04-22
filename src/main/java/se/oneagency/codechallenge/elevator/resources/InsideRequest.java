@@ -12,7 +12,7 @@ public class InsideRequest {
         this.requestedFloor = requestedFloor;
     }
 
-    public long getId() {
+    public int getId() {
         return id;
     }
 

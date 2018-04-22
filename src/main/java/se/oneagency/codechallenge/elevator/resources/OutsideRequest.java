@@ -14,7 +14,7 @@ public class OutsideRequest {
         this.direction = direction;
     }
 
-    public long getFloorNumber() {
+    public int getFloorNumber() {
         return floorNumber;
     }
 

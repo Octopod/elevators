@@ -24,7 +24,7 @@ interface ElevatorController {
      *
      * @return A List with all {@link Elevator} objects.
      */
-    List<Elevator> getElevators();
+    List<StandardElevator> getElevators();
 
     /**
      * Telling the controller that the given elevator is free for new

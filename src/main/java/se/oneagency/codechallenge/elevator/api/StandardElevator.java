@@ -13,10 +13,9 @@ public class StandardElevator implements Elevator {
         UP, DOWN, NONE
     }
 
-    public StandardElevator(int id, int currentFloor, int addressedFloor){
+    public StandardElevator(int id, int currentFloor){
         this.id = id;
         this.currentFloor = currentFloor;
-        this.addressedFloor = addressedFloor;
     }
 
     @Override

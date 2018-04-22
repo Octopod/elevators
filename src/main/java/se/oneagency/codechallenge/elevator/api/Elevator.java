@@ -20,7 +20,7 @@ public interface Elevator {
      *
      * @return DirectionEnum Enumeration value describing the direction.
      */
-    DirectionEnum getDirection();
+    StandardElevator.DirectionEnum getDirection();
 
     /**
      * If the elevator is moving. This is the target floor.

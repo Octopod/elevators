@@ -37,8 +37,8 @@ class StandardElevatorController implements ElevatorController {
     }
 
     @Override
-    public void releaseElevator(StandardElevator elevator) {
+    public void releaseElevator(Elevator elevator) {
         elevator.moveElevator(elevator.currentFloor());
-
     }
+
 }
