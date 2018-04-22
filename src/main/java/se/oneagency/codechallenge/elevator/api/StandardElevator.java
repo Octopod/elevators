@@ -1,33 +1,61 @@
 package se.oneagency.codechallenge.elevator.api;
 
+import static se.oneagency.codechallenge.elevator.api.StandardElevator.DirectionEnum.DOWN;
+import static se.oneagency.codechallenge.elevator.api.StandardElevator.DirectionEnum.NONE;
+import static se.oneagency.codechallenge.elevator.api.StandardElevator.DirectionEnum.UP;
+
 public class StandardElevator implements Elevator {
-    @Override
-    public DirectionEnum getDirection() {
-        return null;
+    private int id;
+    private int currentFloor;
+    private int addressedFloor;
+
+    enum DirectionEnum {
+        UP, DOWN, NONE
+    }
+
+    public StandardElevator(int id, int currentFloor, int addressedFloor){
+        this.id = id;
+        this.currentFloor = currentFloor;
+        this.addressedFloor = addressedFloor;
     }
 
     @Override
-    public int getAddressedFloor() {
-        return 0;
+    public DirectionEnum getDirection() {
+        if (currentFloor>addressedFloor){
+            return DOWN;
+        }
+        if(currentFloor<addressedFloor){
+            return UP;
+        }
+        return NONE;
     }
+
+    @Override
+    public int getAddressedFloor() { return this.addressedFloor; }
 
     @Override
     public int getId() {
-        return 0;
+        return this.id;
     }
 
     @Override
     public void moveElevator(int toFloor) {
-
+        this.addressedFloor = toFloor;
+        if(this.getDirection() == DOWN){
+            this.currentFloor--;
+        }
+        if(this.getDirection() == UP){
+            this.currentFloor++;
+        }
     }
 
     @Override
     public boolean isBusy() {
-        return false;
+        return this.currentFloor != this.addressedFloor;
     }
 
     @Override
     public int currentFloor() {
-        return 0;
+        return this.currentFloor;
     }
 }
