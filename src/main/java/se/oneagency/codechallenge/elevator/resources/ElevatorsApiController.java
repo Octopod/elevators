@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import se.oneagency.codechallenge.elevator.api.ElevatorsApi;
 
@@ -15,13 +16,15 @@ import se.oneagency.codechallenge.elevator.api.ElevatorsApi;
 public final class ElevatorsApiController implements ElevatorsApi{
     Logger log = LoggerFactory.getLogger(ElevatorsApiController.class);
 
-
     @Override
     public ResponseEntity<Void> elevators() {
         log.debug("# ElevatorAPI PING #");
-        return new ResponseEntity<Void>(HttpStatus.OK);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
-
-
+    @RequestMapping("/inside")
+    public InsideRequest inside(){
+        log.debug("inside request");
+        return new InsideRequest(0,5);
+    }
 }
