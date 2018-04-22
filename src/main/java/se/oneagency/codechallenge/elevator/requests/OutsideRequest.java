@@ -1,25 +1,21 @@
-package se.oneagency.codechallenge.elevator.resources;
+package se.oneagency.codechallenge.elevator.requests;
 
 import se.oneagency.codechallenge.elevator.api.Elevator;
 
 /**
  * Request made from outside an elevator
+ * Future addition: what direction does the caller want to go? UP or DOWN
  **/
 public class OutsideRequest {
-    private Elevator.DirectionEnum direction;   //!!dependant on Elevator - future outsourcing!!
     private int floorNumber;
 
     public OutsideRequest(int floorNumber, Elevator.DirectionEnum direction) {
         this.floorNumber = floorNumber;
-        this.direction = direction;
     }
 
     public int getFloorNumber() {
         return floorNumber;
     }
 
-    public Elevator.DirectionEnum getDirection() {
-        return this.direction;
-    }
 }
 

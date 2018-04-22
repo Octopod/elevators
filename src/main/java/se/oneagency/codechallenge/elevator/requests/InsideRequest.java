@@ -1,19 +1,19 @@
-package se.oneagency.codechallenge.elevator.resources;
+package se.oneagency.codechallenge.elevator.requests;
 
 /**
  * Request made from inside an elevator
  **/
 public class InsideRequest {
-    private int id;
+    private int elevatorId;
     private int requestedFloor;
 
-    public InsideRequest(int id, int requestedFloor) {
-        this.id = id;
+    public InsideRequest(int elevatorId, int requestedFloor) {
+        this.elevatorId = elevatorId;
         this.requestedFloor = requestedFloor;
     }
 
-    public int getId() {
-        return id;
+    public int getElevatorId() {
+        return elevatorId;
     }
 
     public int getRequestedFloor() {

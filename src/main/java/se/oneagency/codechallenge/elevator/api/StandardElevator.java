@@ -1,11 +1,9 @@
 package se.oneagency.codechallenge.elevator.api;
 
-import static se.oneagency.codechallenge.elevator.api.StandardElevator.DirectionEnum.DOWN;
-import static se.oneagency.codechallenge.elevator.api.StandardElevator.DirectionEnum.NONE;
-import static se.oneagency.codechallenge.elevator.api.StandardElevator.DirectionEnum.UP;
+import static se.oneagency.codechallenge.elevator.api.StandardElevator.DirectionEnum.*;
 
-public class StandardElevator implements Elevator {
-    private int id;
+public class StandardElevator implements Elevator{
+    private int elevatorId;
     private int currentFloor;
     private int addressedFloor;
 
@@ -13,11 +11,12 @@ public class StandardElevator implements Elevator {
         UP, DOWN, NONE
     }
 
-    public StandardElevator(int id, int currentFloor){
-        this.id = id;
+    public StandardElevator(int elevatorId, int currentFloor){
+        this.elevatorId = elevatorId;
         this.currentFloor = currentFloor;
     }
 
+    // Direction of elevator
     @Override
     public DirectionEnum getDirection() {
         if (currentFloor>addressedFloor){
@@ -33,8 +32,8 @@ public class StandardElevator implements Elevator {
     public int getAddressedFloor() { return this.addressedFloor; }
 
     @Override
-    public int getId() {
-        return this.id;
+    public int getElevatorId() {
+        return this.elevatorId;
     }
 
     @Override

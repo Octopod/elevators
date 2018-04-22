@@ -34,7 +34,7 @@ public interface Elevator {
      *
      * @return primitive integer representing the elevator.
      */
-    int getId();
+    int getElevatorId();
 
     /**
      * Command to move the elevator to the given floor.

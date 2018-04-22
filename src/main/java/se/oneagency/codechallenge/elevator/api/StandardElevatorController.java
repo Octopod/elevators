@@ -3,7 +3,7 @@ package se.oneagency.codechallenge.elevator.api;
 import java.util.ArrayList;
 import java.util.List;
 
-class StandardElevatorController implements ElevatorController {
+public class StandardElevatorController implements ElevatorController {
     private final List<StandardElevator> listOfElevators = new ArrayList<>();
     private int nrOfFloors;
     private int nrOfElevators;
@@ -19,7 +19,8 @@ class StandardElevatorController implements ElevatorController {
 
     /**
      * Placeholder.
-     * returns the first non-busy elevator*/
+     * returns the first non-busy elevator
+     * */
     @Override
     public StandardElevator requestElevator(int toFloor) {
         List<StandardElevator> possibleElevators = getElevators();

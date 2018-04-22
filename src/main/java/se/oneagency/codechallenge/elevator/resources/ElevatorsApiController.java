@@ -1,10 +1,10 @@
 package se.oneagency.codechallenge.elevator.resources;
 
+import com.google.common.eventbus.EventBus;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import se.oneagency.codechallenge.elevator.api.ElevatorsApi;
 
@@ -15,6 +15,10 @@ import se.oneagency.codechallenge.elevator.api.ElevatorsApi;
 @RestController
 public final class ElevatorsApiController implements ElevatorsApi{
     Logger log = LoggerFactory.getLogger(ElevatorsApiController.class);
+    EventBus requests;
+
+    // Write api methods here
+    // They should put all new requests into the eventbus
 
     @Override
     public ResponseEntity<Void> elevators() {
@@ -22,9 +26,4 @@ public final class ElevatorsApiController implements ElevatorsApi{
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-    @RequestMapping("/inside")
-    public InsideRequest inside(){
-        log.debug("inside request");
-        return new InsideRequest(0,5);
-    }
 }
